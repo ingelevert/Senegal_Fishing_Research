@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 #Load vessel URLs from CSV
-input_csv = "/Users/levilina/Documents/Coding/marine-data-learning/data/raw/Hyperlinked_Vessel_URLs.csv"  # Replace with your actual file name
+input_csv = "/Users/levilina/Documents/Coding/Senegal_fishing_Research/data/raw/Hyperlinked_Vessel_URLs.csv"  # Replace with your actual file name
 url_column_name = "url"         # Adjust if your column has a different header
 df_urls = pd.read_csv(input_csv)
 urls = df_urls[url_column_name].dropna().unique().tolist()
