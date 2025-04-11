@@ -1,6 +1,6 @@
 # Secrets
 .env
-
+.DS_Store
 # Data files
 data/*
 !data/README.md  # keep folder but not files
