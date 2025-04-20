@@ -3,6 +3,8 @@
 .DS_Store
 # Data files
 data/*
+project_data/*
+
 !data/README.md  # keep folder but not files
 
 # Python stuff
@@ -11,4 +13,5 @@ __pycache__/
 
 # VS Code stuff
 .vscode/
+.venv
 

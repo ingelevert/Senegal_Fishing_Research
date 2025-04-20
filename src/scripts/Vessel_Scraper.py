@@ -3,12 +3,12 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 #Load vessel URLs from CSV
-input_csv = "/Users/levilina/Documents/Coding/Senegal_fishing_Research/data/raw/Hyperlinked_Vessel_URLs.csv"  # Replace with your actual file name
+input_csv = "vessel_urls.csv"  # Adjust the path to your CSV file if you want to use this
 url_column_name = "url"         # Adjust if your column has a different header
 df_urls = pd.read_csv(input_csv)
 urls = df_urls[url_column_name].dropna().unique().tolist()
 
-#Function to extract vessel data from each page (HTML)
+#Function to extract vessel data from each page in html
 def extract_vessel_data(soup):
     try:
         table = soup.find("table", class_="table")
@@ -37,7 +37,7 @@ def extract_vessel_data(soup):
         print("Error parsing:", e)
         return {}
 
-#Loops through each URL and scrape data
+#Iterate through each URL and scrape data
 results = []
 for url in urls:
     print(f"Scraping {url}...")
@@ -49,7 +49,8 @@ for url in urls:
         results.append(vessel_data)
     except Exception as e:
         print(f"Failed to scrape {url}: {e}")
-    time.sleep(1)  # ill be polite and not cook the server or get blocked
+    time.sleep(1)  #don't want to solve captchas
+#Convert results to DataFrame
 
 #Save all results to CSV
 output_csv = "scraped_vessel_data.csv"

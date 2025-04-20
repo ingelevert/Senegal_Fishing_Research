@@ -17,19 +17,6 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-# Set up debug logging
-DEBUG = True
-def debug_log(message, data=None):
-    """Print debug information if DEBUG is True"""
-    if DEBUG:
-        print(f"DEBUG: {message}")
-        if data is not None:
-            if isinstance(data, dict) or isinstance(data, list):
-                print(json.dumps(data, indent=2, default=str)[:1000])  # Limit output size
-            else:
-                print(f"  {str(data)[:1000]}")  # Limit output size
-            print("---")
-
 def read_vessel_data(file_path):
     """Read vessel data from CSV file."""
     df = pd.read_csv(file_path)
