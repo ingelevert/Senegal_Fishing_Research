@@ -6,6 +6,12 @@ from dotenv import load_dotenv
 from tqdm import tqdm  # For progress bar
 import json  # For pretty printing API responses
 
+def debug_log(message, data=None):
+    """Print debug information."""
+    print(f"DEBUG: {message}")
+    if data and isinstance(data, dict):
+        print(json.dumps(data, indent=2)[:500])  # Limit output length
+
 # Load environment variables
 load_dotenv()
 

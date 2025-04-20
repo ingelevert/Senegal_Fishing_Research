@@ -1,1 +1,5 @@
 # Senegal_Fishing_Research
+
+# For university I was doing a project on European fishers fishing in the Senegalese EEZ. Out of curiosity and due to mandatory data research I decided to try to get information for vessels flying under the senegalese flag and see if I can find any solid evidence myself about big companies using the senegalese flag as their flag of convenience.
+
+# For this research I decided to first scrape the Vessel IMO's (ID's) from websites to get a nice list of senegalese registered ships. I ran this through the Global Fishing Watch api and got back mostly empty packages, but also some actual data and registered companies that fly under the senegalese flag. I later put this in a Sankey diagram to show how little information was actually available, showing for the need of a more transparant way of governing the sea within the senegalese EEZ.
